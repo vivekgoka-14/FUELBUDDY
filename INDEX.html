@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUEL BUDDY</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            flex-direction: column;
+            min-height: 100px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            color: white;
+            padding: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .logo {
+            height: 150px;
+            width: 100px;
+        }
+        .menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: black;
+            padding: 80px;
+            border-radius: 5px;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            text-align: right;
+        }
+        .menu ul li {
+            margin: 10px 0;
+        }
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav {
+            background-color: red;
+            padding: 40px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            flex-grow: 1;
+            text-align: center;
+            padding: 50px;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            animation: slideIn 2s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .hero img {
+            width: 110%;
+            max-width: 5000px;
+        }
+        .animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .bike {
+            position: relative;
+            animation: moveBike 5s infinite linear;
+        }
+        @keyframes moveBike {
+            from { transform: translateX(-100px); }
+            to { transform: translateX(100vw); }
+        }
+        .text-animation {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            animation: textGlow 2s infinite alternate;
+        }
+        @keyframes textGlow {
+            from { color: white; text-shadow: 0 0 10px red; }
+            to { color: yellow; text-shadow: 0 0 20px orange; }
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .footer-center img {
+            height: 150px;
+            margin-top: 10px;
+        }
+        .footer-bottom img {
+            height: 500px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo1.jpg" alt="Fuel Buddy Logo" class="logo">
+        <center>
+        <h1>FUEL BUDDY</h1>
+        </center>
+        <!--<button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>-->
+    </header>
+    
+   <!-- <div class="menu" id="menu">
+        <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#review">Review</a></li>
+        </ul>
+    </div>-->
+    <nav>
+        <ul>
+            <li><a href="signup.html">signup</a></li>
+            <li><a href="login.html">login</a></li>
+                 <li><a href="fuellocation.html">Fuel</a></li>
+            <li><a href="locationtesting.html">Mechanic Service</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="animation">
+        <div class="bike">
+            <img   width="150" src="road.png" alt="Delivery Bike">
+            <span><b>Fuel Buddy - Always at your service!</b></span>
+        </div>
+    </section>
+        <main>
+        <section class="hero">
+            <img src="filling.jpeg"  alt="Fuel Buddy Service">
+            <h4><u>User-Friendly Interface:</u> The website is easy to navigate, making fuel management simple and efficient.</h4>
+              <h4><u>Convenient Fuel Delivery: </u>Offers doorstep fuel delivery, saving time and effort.</h4>
+            <p>Your ultimate fuel partner for hassle-free refueling anytime, anywhere.</p>
+        </section>
+         </main>
+         <section class="text-animation">Your Trusted Fuel Partner</section>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Contact Us</p>
+                <p>About Us</p>
+                <p>Email: support@fuelbuddy.com</p>
+            </div>
+            <div class="footer-center">
+                <p>Follow us on:</p>
+                <p>Instagram | Twitter | Facebook</p>
+                <img src="socialmedia.webp" alt="Social Media">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <img src="logo1.jpg" alt="Footer Image">
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
