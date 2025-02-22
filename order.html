@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('DELIVERY.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 50px;
+            opacity: 0;
+            animation: fadeInPage 1.5s ease-in-out forwards;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .track-btn {
+            background-color: yellow;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            animation: bounce 1.5s infinite;
+        }
+        .track-btn:hover {
+            background-color: #f1c40f;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeInPage {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="message"><b>Your order has successfully done!</b></div>
+    <button class="track-btn" onclick="trackOrder()">Track Your Order</button>
+
+    <script>
+        function trackOrder() {
+            alert("Redirecting to order tracking page...");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .otp-input {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .otp-input input {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .otp-input input:focus {
+            transform: scale(1.1);
+            border-color: #28a745;
+            outline: none;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter OTP</h2>
+        <div class="otp-input">
+            <input type="text" maxlength="1" oninput="moveToNext(this, 'otp2')" id="otp1">
+            <input type="text" maxlength="1" oninput="moveToNext(this, 'otp3')" id="otp2">
+            <input type="text" maxlength="1" oninput="moveToNext(this, 'otp4')" id="otp3">
+            <input type="text" maxlength="1" oninput="moveToNext(this, 'otp5')" id="otp4">
+            <input type="text" maxlength="1" oninput="moveToNext(this, 'otp6')" id="otp5">
+            <input type="text" maxlength="1" id="otp6">
+        </div>
+        <button onclick="verifyOTP()">Submit</button>
+    </div>
+
+    <script>
+        function moveToNext(current, nextFieldID) {
+            if (current.value.length === 1) {
+                document.getElementById(nextFieldID)?.focus();
+            }
+        }
+        
+        function verifyOTP() {
+            let otp = '';
+            for (let i = 1; i <= 6; i++) {
+                otp += document.getElementById('otp' + i).value;
+            }
+            if (otp.length === 6) {
+                window.location.href = "login.html";
+            } else {
+                alert("Please enter a valid 6-digit OTP.");
+            }
+        }
+    </script>
+</body>
+</html>

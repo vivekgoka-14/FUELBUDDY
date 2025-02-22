@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Buddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: none;
+            color: white;
+            text-align: center;
+            background-image: url('station.jpeg');
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: black;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .dropdown a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .menu:hover .dropdown {
+            display: block;
+        }
+        .nav-bar {
+            background-color: red;
+            padding: 5px 0;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+        }
+        .banner {
+            background: url('fuel-mining.jpg') no-repeat center center/cover;
+            padding: 100px 20px;
+            flex-grow: 1;
+        }
+        .order-button {
+            background-color: yellow;
+            color: black;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: black;
+            padding: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Fuel Buddy</div>
+        <div class="menu">
+            <button class="menu-button">☰ Menu</button>
+            <div class="dropdown">
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+                <a href="#">Reviews</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-bar">
+        <a href="fueal.html">Fuel</a>
+        <a href="mechanicservices.html">Mechanic Services</a>
+        <a href="">Tracking</a>
+    </nav>
+    <section class="banner">
+        <h1>Your Reliable Fuel Partner</h1>
+        <p>Fuel Buddy ensures you never run out of fuel. Quick, efficient, and always available!</p>
+        <button class="order-button">Order Now</button>
+    </section>
+    <footer class="footer">
+        <p>Contact Us | About Us | Email: support@fuelbuddy.com | Your Orders | www.fuelbuddy.com</p>
+    </footer>
+</body>
+</html>

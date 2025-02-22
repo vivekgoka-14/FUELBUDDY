@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('pay.WEBP');
+            margin: 0;
+        }
+        .payment-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .amount {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .pay-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: white;
+            background: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+        .pay-btn:hover {
+            background: #218838;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Page</h2>
+        <p class="amount">Amount: $100</p>
+        <a href="order.html" class="pay-btn">Pay Now</a>
+    </div>
+</body>
+</html>

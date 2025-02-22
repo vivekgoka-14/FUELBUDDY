@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Buddy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('mechanic2.jpg');
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #e0e0e0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container {
+            width: 30%;
+            margin: auto;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            animation: slideUp 1.5s ease-out;
+        }
+        input, select, button {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+            background: #333;
+            color: #fff;
+        }
+        input:hover, select:hover {
+            transform: scale(1.05);
+        }
+        button {
+            background: #b8860b;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+        }
+        button:hover {
+            background: #d4af37;
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fuel Buddy Service</h2>
+        <form action="mechanicservice.php" method="post">
+            <label for="vehicle_number">Vehicle Number:</label>
+            <input type="text" name="vehicle_number" placeholder="Vehicle number" required>
+        
+            <label for="address">Address:</label>
+            <input type="text" name="address" placeholder="Enter your Address" required>
+        
+            <label for="vechile type">vechile type:</label>
+            <select name="vechile type" required>
+                <option >car</option>
+                <option >truck</option>
+                <option >bike</option>
+                <option >bus</option>
+              </select>
+              <label>Vehicle Number:</label>
+            <input type="text" placeholder="Enter Vehicle Number">
+
+            <label>Problem Type:</label>
+            <select>
+                <option>Fuel Refill</option>
+                <option>Flat Tire</option>
+                <option>Engine Failure</option>
+                <option>Battery Issue</option>
+                <option>Tyre Failure</option>
+            </select>
+            <label>Payment Type:</label>
+            <select>
+                <option>Cash</option>
+                <option>Credit/Debit Card</option>
+                <option>UPI</option>
+            </select>
+            
+
+        
+            <!-- <label for="quantity">Fuel Quantity:</label>
+            <select name="quantity" required>
+                <option value="">Select Quantity</option>
+                <option value="1">1 Litre</option>
+                <option value="2">2 Litres</option>
+                <option value="5">5 Litres</option>
+                <option value="10">10 Litres</option>
+            </select>
+        
+            <label for="payment_type">Payment Type:</label>
+            <select name="payment_type" required>
+                <option value="">Select Payment Type</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+                <option value="PhonePe">PhonePe</option>
+                <option value="Debit/Credit Card">Debit/Credit Card</option>
+                <option value="UPI Payment">UPI Payment</option>
+            </select>
+        
+            <button type="submit" class="order-btn">Order Now</button>
+        </form>-->
+            <!-- <form action="mechanicservice.php" method="post"> 
+                <label for="vehicle_number">Vehicle Number:</label>
+                <input type="text" name="vehicle_number" placeholder="Vehicle number" required>
+            
+                <label for="address">Address:</label>
+                <input type="text" name="address" placeholder="Enter your Address" required>
+            
+                <label for="fuel_type">Fuel Type:</label>
+            
+            <label>Vehicle Type:</label>
+            <select>
+                <option>Car</option>
+                <option>Bike</option>
+                <option>Truck</option>
+                <option>Bus</option>
+            </select>
+
+            <label>Vehicle Number:</label>
+            <input type="text" placeholder="Enter Vehicle Number">
+
+            <label>Problem Type:</label>
+            <select>
+                <option>Fuel Refill</option>
+                <option>Flat Tire</option>
+                <option>Engine Failure</option>
+                <option>Battery Issue</option>
+                <option>Tyre Failure</option>
+            </select>
+
+            <label>Payment Type:</label>
+            <select>
+                <option>Cash</option>
+                <option>Credit/Debit Card</option>
+                <option>UPI</option>
+            </select>-->
+                <button type="button" class="order-btn" onclick="placeOrder()">Order Now</button>
+                <script>
+                    function placeOrder() {
+                        window.location.href = "payment.html";
+                    }
+                </script>
+            </form>
+
+            
+          <!---  <button class="order-btn" onclick=window.location.href='payment.html'>Order Now</button>
+        </form>
+    </div>
+    <script>
+        function placeOrder() {
+            window.location.href = "payment.html";
+        }
+    </script>-->
+</body>
+</html>

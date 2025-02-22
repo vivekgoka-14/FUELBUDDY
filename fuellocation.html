@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUEL BUDDY - Locations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            background-image:url('');
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .location-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .location-btn {
+            background-color: #007bff;
+            color:white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .location-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .fuel-station-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .fuel-station-card {
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .fuel-station-card img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .book-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .book-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>FUEL BUDDY - Select Your Location</h1>
+    <div class="location-container">
+        <button class="location-btn" onclick="showFuelStations('Warangal')">Warangal</button>
+        <button class="location-btn" onclick="showFuelStations('Hanamkonda')">Hanamkonda</button>
+        <button class="location-btn" onclick="showFuelStations('Hyderabad')">Hyderabad</button>
+        <button class="location-btn" onclick="showFuelStations('Karimnagar')">Karimnagar</button>
+    </div>
+
+    <div class="fuel-station-container" id="fuel-station-container">
+    </div>
+
+    <script>
+        function showFuelStations(location) {
+            const fuelStationContainer = document.getElementById('fuel-station-container');
+            fuelStationContainer.innerHTML = '';
+
+            const fuelStations = [
+                { location: 'Warangal', name: 'HP Fuel Station', contact: '9876543210', bookings: 12, img: 'HP.jpg' },
+                { location: 'Warangal', name: 'IndianOil Fuel Station', contact: '9876543211', bookings: 8, img: 'indin .jpg' },
+                { location: 'Warangal', name: 'Reliance Fuel Station', contact: '9876543211', bookings: 8, img: 'reliance.jpg' },
+                { location: 'Warangal', name: 'Bharat Fuel Station', contact: '9876543211', bookings: 8, img: 'bharat.jpg' },
+                { location: 'Hanamkonda', name: 'HP Fuel Station', contact: '9234567890', bookings: 10, img: 'HP.jpg' },
+                { location: 'Hanamkonda', name: 'Indian  Fuel Station', contact: '9234567890', bookings: 10, img: 'indin .jpg' },
+                { location: 'Hanamkonda', name: 'Reliance Fuel Station', contact: '9234567890', bookings: 10, img: 'reliance.jpg' },
+                { location: 'Hanamkonda', name: 'Bharat Fuel Station', contact: '9234567890', bookings: 10, img: 'bharat.jpg' },
+                { location: 'Hyderabad', name: 'Bharat Petroleum', contact: '9345678901', bookings: 15, img: 'bharat.jpg' },
+                { location: 'Hyderabad', name: 'HP Petroleum', contact: '9345678901', bookings: 15, img: 'HP.jpg' },
+                { location: 'Hyderabad', name: 'Reliance Petroleum', contact: '9345678901', bookings: 15, img: 'reliance.jpg' },
+                { location: 'Hyderabad', name: 'IndianOil Petroleum', contact: '9345678901', bookings: 15, img: 'indin .jpg' },
+                { location: 'Karimnagar', name: 'IndianOil Fuel Station', contact: '9456789012', bookings: 7, img: 'indin .jpg' },
+                { location: 'Karimnagar', name: 'Bharat Fuel Station', contact: '9456789012', bookings: 7, img: 'bharat.jpg' },
+                { location: 'Karimnagar', name: 'HP Fuel Station', contact: '9456789012', bookings: 7, img: 'HP.jpg' },
+                { location: 'Karimnagar', name: 'Reliance Fuel Station', contact: '9456789012', bookings: 7, img: 'reliance.jpg' },
+
+            ];
+
+            const filteredFuelStations = fuelStations.filter(station => station.location === location);
+
+            filteredFuelStations.forEach(station => {
+                const fuelStationCard = document.createElement('div');
+                fuelStationCard.classList.add('fuel-station-card');
+                fuelStationCard.innerHTML = `
+                    <img src="${station.img}" alt="${station.name}">
+                    <h3>${station.name}</h3>
+                    <p>Contact: ${station.contact}</p>
+                    <p>Bookings: ${station.bookings}</p>
+                   <button class="book-btn" onclick="window.location.href='fueal.html';">Book Now</button>
+
+                `;
+                fuelStationContainer.appendChild(fuelStationCard);
+            });
+        }
+
+        function bookOrder(stationName) {
+            alert(`Order booked at ${stationName}`);
+         }
+    </script>
+</body>
+</html>

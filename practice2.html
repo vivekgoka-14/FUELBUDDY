@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?gas-station') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate ease-in-out;
+        }
+        @keyframes backgroundAnimation {
+            0% {
+                filter: brightness(1);
+            }
+            100% {
+                filter: brightness(1.2);
+            }
+        }
+        .container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .order-btn {
+            background: linear-gradient(to right, #ffcc00, #ff6600);
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            color: white;
+            transition: all 0.3s ease;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .order-btn:hover {
+            background: linear-gradient(to right, #ff9900, #ff3300);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center; color: #ff6600;">Order Fuel</h2>
+        <label for="location">Select Your Location:</label>
+        <input type="text" id="location" placeholder="Enter your location" required>
+        
+        <label for="stations">Nearby Fuel Stations:</label>
+        <select id="stations">
+            <option>Station 1</option>
+            <option>Station 2</option>
+            <option>Station 3</option>
+        </select>
+        
+        <label for="vehicle">Vehicle Number:</label>
+        <input type="text" id="vehicle" placeholder="Enter vehicle number" required>
+        
+        <label for="quantity">Fuel Quantity:</label>
+        <select id="quantity">
+            <option>1 Litre</option>
+            <option>2 Litres</option>
+            <option>5 Litres</option>
+            <option>10 Litres</option>
+        </select>
+        
+        <label for="payment">Payment Type:</label>
+        <select id="payment">
+            <option>Cash on Delivery</option>
+            <option>PhonePe</option>
+            <option>Debit/Credit Card</option>
+            <option>UPI Payment</option>
+        </select>
+        
+        <button class="order-btn" onclick="placeOrder()">Order Now</button>
+    </div>
+
+    <script>
+        function placeOrder() {
+            let location = document.getElementById("location").value;
+            let station = document.getElementById("stations").value;
+            let vehicle = document.getElementById("vehicle").value;
+            let quantity = document.getElementById("quantity").value;
+            let payment = document.getElementById("payment").value;
+            
+            if (location === "" || vehicle === "") {
+                alert("Please enter all details correctly!");
+                return;
+            }
+            
+            alert(`Order placed successfully!\nLocation: ${location}\nStation: ${station}\nVehicle: ${vehicle}\nQuantity: ${quantity}\nPayment: ${payment}`);
+        }
+    </script>
+</body>
+</html>

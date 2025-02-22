@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUEL BUDDY Locations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .location-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .location-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .location-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .location-btn:active {
+            transform: scale(0.9);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .location-btn {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>FUEL BUDDY - Select Your Location</h1>
+    <div class="location-container">
+        <button class="location-btn" onclick="alert('Warangal Selected')">Warangal</button>
+        <button class="location-btn" onclick="alert('Hanamkonda Selected')">Hanamkonda</button>
+        <button class="location-btn" onclick="alert('Hyderabad Selected')">Hyderabad</button>
+        <button class="location-btn" onclick="alert('Karimnagar Selected')">Karimnagar</button>
+    </div>
+</body>
+</html>
